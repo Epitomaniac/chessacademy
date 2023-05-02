@@ -1,0 +1,37 @@
+.navBar {
+    width: 100%;
+    height: 45px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: blue;
+    margin: 0;
+}
+
+.leftDiv {
+    display: flex;
+    align-items: center;
+}
+
+.rightDiv {
+    display: flex;
+    align-items: center;
+}
+
+.navLogin {
+    margin-right: 25px;
+    color: white;
+    font-size: 15px;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navTitle {
+    color: white;
+    font-size: 15px;
+    margin: 20px;
+}

@@ -1,6 +1,4 @@
-import { Chess } from "chess.js";
 import { useState } from "react";
-import { Chessboard } from "react-chessboard";
 import IntroNav from "@/components/IntroNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";

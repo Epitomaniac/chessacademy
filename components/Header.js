@@ -36,9 +36,11 @@ export default function Header() {
           <p className={styles.navTitle}>Lessons</p>
         </Link>
       </div>
-      <div className={styles.rightDiv}>
-        {session?.user ? <Logout /> : <Login />}
-      </div>
+      {5 < 4 && (
+        <div className={styles.rightDiv}>
+          {session?.user ? <Logout /> : <Login />}
+        </div>
+      )}
     </nav>
   );
 }

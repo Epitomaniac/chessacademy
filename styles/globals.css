@@ -12,6 +12,14 @@ body {
   background-color: #e2dfdf;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+}
+
 /* lessons navbar */
 
 .lessons-navbar {
@@ -19,7 +27,8 @@ body {
   min-height: 500px;
   min-width: 175px;
   background-color: linen;
-  margin-right: 50px;
+  margin-right: 25px;
+  margin-bottom: 50px;
 }
 
 .lessons-navbar a {
@@ -31,7 +40,7 @@ a:visited,
 a:hover,
 a:active {
   color: inherit;
-  font-size: 14px;
+  font-size: inherit;
 }
 
 .navbar-title {
@@ -51,43 +60,37 @@ a:active {
   height: 30px;
   border-bottom: 1px solid black;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.navbar-lesson:hover {
+  background-color: #dedbdb;
 }
 
 /* lesson component */
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  max-width: 800px;
 }
 
 .board {
   margin-top: 50px;
-  margin-right: 50px;
-  width: fit-content;
-  height: fit-content;
+  margin-bottom: 50px;
+  width: 328.5px;
+  height: 328.5px;
   border: 2px solid gray;
 }
 
 .text-box {
   margin-top: 50px;
-  margin-right: 30px;
+  margin-right: 25px;
   width: 400px;
   min-width: 400px;
   height: 330px;
   border: 2px solid gray;
-  background-color: white;
-}
-
-.text-box-long {
-  margin-top: 50px;
-  margin-right: 30px;
-  width: 600px;
-  min-width: 400px;
-  height: 330px;
-  border: 2px solid gray;
-  background-color: white;
-
+  background-color: linen;
 }
 
 .text-title-div {
@@ -110,7 +113,6 @@ a:active {
 }
 
 .text-body {
-  user-select: none;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -219,7 +221,7 @@ a:active {
   width: 50%;
   height: 100%;
   border-right: 0.5px solid black;
-  border-radius: 5px;
+  border-radius: 3px 0 0 3px;
 }
 
 .second-img {
@@ -230,7 +232,7 @@ a:active {
   width: 50%;
   height: 100%;
   border-left: 0.5px solid black;
-  border-radius: 5px;
+  border-radius: 0 3px 3px 0;
 }
 
 .first-img:hover {
@@ -241,6 +243,53 @@ a:active {
   background-color: #ece7e7;
 }
 
-.underline {
-  text-decoration: underline;
+.first-option {
+  width: fit-content;
+  min-width: 80px;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  margin: 10px 0 10px 10px;
+}
+
+.first-option:hover {
+  background-color: #ece7e7;
+  cursor: pointer
+}
+
+.second-option {
+  width: fit-content;
+  min-width: 80px;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.third-option {
+  width: fit-content;
+  min-width: 80px;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.second-option:hover {
+  background-color: #ece7e7;
+  cursor: pointer
+}
+
+.third-option:hover {
+  background-color: #ece7e7;
+  cursor: pointer
+}
+
+.option-text {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: justify;
+  text-justify: auto;
+  font-family: cursive, sans-serif;
+  line-height: 23px;
+  font-size: 15px;
 }

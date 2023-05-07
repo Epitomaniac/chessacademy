@@ -1,27 +1,68 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function IntroNav() {
+export default function IntroNav({
+  highlight1,
+  highlight2,
+  highlight3,
+  highlight4,
+  highlight5,
+  highlight6,
+  highlight7,
+}) {
+  const router = useRouter();
   return (
     <div className="lessons-navbar">
       <ul>
         <li className="navbar-title">Intro</li>
-        <li className="navbar-lesson">
-          <Link href="/lessons/intro/1">Welcome</Link>
+        <li
+          style={highlight1 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/1")}
+          className="navbar-lesson"
+        >
+          The Board
         </li>
-        <li className="navbar-lesson">
-          <Link href="/lessons/intro/2">The Board</Link>
+        <li
+          style={highlight2 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/2")}
+          className="navbar-lesson"
+        >
+          The Pieces: Placement
         </li>
-        <li className="navbar-lesson">
-          <Link href="/lessons/intro/3">The Pieces: Placement</Link>
+        <li
+          style={highlight3 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/3")}
+          className="navbar-lesson"
+        >
+          The Pieces: Values
         </li>
-        <li className="navbar-lesson">
-          <Link href="/lessons/intro/4">The Pieces: Values</Link>
+        <li
+          style={highlight4 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/4")}
+          className="navbar-lesson"
+        >
+          Quiz: Piece Values
         </li>
-        <li className="navbar-lesson">
-          <Link href="/lessons/intro/5">Quiz 1</Link>
+        <li
+          style={highlight5 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/5")}
+          className="navbar-lesson"
+        >
+          The Pieces: Movement
         </li>
-        <li className="navbar-lesson">
-          <Link href="/lessons/intro/6">The Pieces: Movement</Link>
+        <li
+          style={highlight6 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/6")}
+          className="navbar-lesson"
+        >
+          Quiz: Movement
+        </li>
+        <li
+          style={highlight7 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/intro/7")}
+          className="navbar-lesson"
+        >
+          Checkmate
         </li>
       </ul>
     </div>

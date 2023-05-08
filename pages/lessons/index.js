@@ -7,6 +7,9 @@ export default function Lessons() {
       <h2 style={{ marginLeft: "15px", marginTop: "15px" }}>
         <Link href="/lessons/intro/1">Intro</Link>
       </h2>
+      <h2 style={{ marginLeft: "15px", marginTop: "15px" }}>
+        <Link href="/lessons/basic-checkmates/1">Basic Checkmates</Link>
+      </h2>
     </div>
   );
 }

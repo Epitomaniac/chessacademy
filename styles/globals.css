@@ -248,7 +248,7 @@ a:active {
   min-width: 80px;
   border: 1.5px solid black;
   border-radius: 5px;
-  margin: 10px 0 10px 10px;
+  margin: 10px;
 }
 
 .first-option:hover {
@@ -261,8 +261,7 @@ a:active {
   min-width: 80px;
   border: 1.5px solid black;
   border-radius: 5px;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin: 0 10px 10px 10px
 }
 
 .third-option {
@@ -270,7 +269,7 @@ a:active {
   min-width: 80px;
   border: 1.5px solid black;
   border-radius: 5px;
-  margin-left: 10px;
+  margin: 0 10px 10px 10px
 }
 
 .second-option:hover {

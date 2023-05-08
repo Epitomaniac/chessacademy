@@ -1,7 +1,7 @@
 import { Chess } from "chess.js";
 import { useState } from "react";
 import { Chessboard } from "react-chessboard";
-import IntroNav from "@/components/IntroNav";
+import CheckmatesNav from "@/components/CheckmatesNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
@@ -14,9 +14,7 @@ export default function Page() {
     <Three next={next} pre={pre} />,
     <Four next={next} pre={pre} />,
     <Five next={next} pre={pre} />,
-    <Six next={next} pre={pre} />,
-    <Seven next={next} pre={pre} />,
-    <Eight direct={direct} pre={pre} />,
+    <Six direct={direct} pre={pre} />,
   ];
   const [index, setIndex] = useState(0);
 
@@ -33,46 +31,29 @@ export default function Page() {
   }
 
   function direct() {
-    router.push("/lessons/basic-checkmates/1");
+    router.push("/lessons/basic-checkmates/2");
   }
 
   function One({ next }) {
     const [game, setGame] = useState(
-      new Chess("8/8/4k3/8/8/8/8/KR6 w - - 0 1"),
+      new Chess("8/pppppppp/8/8/8/8/PPPPPPPP/8 w - - 0 1"),
     );
-    const [customArrows, setCustomArrows] = useState(null);
-
-    function giveCheck() {
-      game.move("Re1");
-      setGame({ ...game });
-      setTimeout(() => {
-        setCustomArrows([["e1", "e6"]]);
-      }, 300);
-    }
 
     return (
       <div className="flex">
-        <IntroNav highlight7={true} />
+        <CheckmatesNav highlight1={true} />
         <div className="container">
           <div className="text-box">
             <div className="text-title-div">
-              <h2 className="text-title">Check</h2>
+              <h2 className="text-title">The Back Rank</h2>
             </div>
             <div className="text-body-div">
               <p className="text-body">
-                In chess the side who captures the other side's king wins the
-                game.
+                Your first row, where you put your king and other pieces behind
+                your pawns is called your <strong>back rank</strong>.
               </p>
               <p className="text-body">
-                The move that attacks the opponent's king is called a{" "}
-                <strong>check</strong>.
-              </p>
-              <button onClick={giveCheck} className="lesson-btn">
-                Give a check
-              </button>
-              <p className="text-body">
-                When the opponent attacks your king, you are{" "}
-                <strong>in check</strong>.
+                The board shows both white's and black's back ranks.
               </p>
             </div>
             <div className="arrows-div">
@@ -99,8 +80,27 @@ export default function Page() {
               areArrowsAllowed={false}
               showBoardNotation={false}
               arePiecesDraggable={false}
-              customArrows={customArrows}
+              customArrows={[]}
               customArrowColor={"rgba(255,0,0, 0.5)"}
+              customSquareStyles={{
+                a1: { backgroundColor: "#ff000080" },
+                b1: { backgroundColor: "#ff000080" },
+                c1: { backgroundColor: "#ff000080" },
+                d1: { backgroundColor: "#ff000080" },
+                e1: { backgroundColor: "#ff000080" },
+                f1: { backgroundColor: "#ff000080" },
+                g1: { backgroundColor: "#ff000080" },
+                h1: { backgroundColor: "#ff000080" },
+                h8: { backgroundColor: "#ff000080" },
+                a8: { backgroundColor: "#ff000080" },
+                b8: { backgroundColor: "#ff000080" },
+                c8: { backgroundColor: "#ff000080" },
+                d8: { backgroundColor: "#ff000080" },
+                e8: { backgroundColor: "#ff000080" },
+                f8: { backgroundColor: "#ff000080" },
+                g8: { backgroundColor: "#ff000080" },
+                h8: { backgroundColor: "#ff000080" },
+              }}
             />
           </div>
         </div>
@@ -110,112 +110,39 @@ export default function Page() {
 
   function Two({ next, pre }) {
     const [game, setGame] = useState(
-      new Chess("8/8/4k3/8/4K3/8/8/8 w - - 0 1"),
+      new Chess("7k/r5pp/8/p7/8/7P/3R1PP1/6K1 w - - 0 1"),
     );
+    const [arrows, setArrows] = useState([]);
 
-    return (
-      <div className="flex">
-        <IntroNav highlight7={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Kings Can't Give Check</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                You can attack your opponent's king with any piece other than
-                your own king.
-              </p>
-              <p className="text-body">
-                In this position, the kings can never enter the highlighted
-                squares because they are unable to give each other checks.
-              </p>
-              <p className="text-body">
-                So during the game, there must be at least a square between the
-                two kings.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
-          </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customSquareStyles={{
-                f5: { backgroundColor: "rgba(255,0,0, 0.5)" },
-                e5: { backgroundColor: "rgba(255,0,0, 0.5)" },
-                d5: { backgroundColor: "rgba(255,0,0, 0.5)" },
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function Three({ next, pre }) {
-    const [game, setGame] = useState(
-      new Chess("8/8/7p/3pk3/2n5/8/1B6/K7 b - - 0 1"),
-    );
-
-    const [arrows, setArrows] = useState([["b2", "e5"]]);
-
-    function getAway() {
-      game.move("Ke4");
+    function giveMate() {
+      game.move("Rd8");
       setGame({ ...game });
       setTimeout(() => {
-        setArrows([]);
+        setArrows([["d8", "h8"]]);
       }, 300);
     }
 
     return (
       <div className="flex">
-        <IntroNav highlight7={true} />
+        <CheckmatesNav highlight1={true} />
         <div className="container">
           <div className="text-box">
             <div className="text-title-div">
-              <h2 className="text-title">Responding to a Check</h2>
+              <h2 className="text-title">The Back Rank</h2>
             </div>
             <div className="text-body-div">
               <p className="text-body">
-                When you are in check, you{" "}
-                <span className="underline">must</span> make a move that gets
-                your king out of the check; any other move is illegal.
+                The back rank is important because the kings often stay there
+                for the majority of the game, and if you fail to protect your
+                back rank, unexpected checkmates could happen!
               </p>
-              <p className="text-body">
-                There are up to three ways you can react to a check:
-              </p>
-              <p className="text-body">
-                1- You can get out of the way of the attack by moving your king
-                to a square that's safe.
-              </p>
-              <button
-                onClick={getAway}
-                style={{ marginTop: "0" }}
-                className="lesson-btn"
-              >
-                Get away
+              <button onClick={giveMate} className="lesson-btn">
+                Give mate
               </button>
+              <p className="text-body">
+                Here white checkmates black because black's king is trapped
+                behind its own pawns and the back rank is left unprotected.
+              </p>
             </div>
             <div className="arrows-div">
               <FontAwesomeIcon
@@ -244,6 +171,93 @@ export default function Page() {
               arePiecesDraggable={false}
               customArrowColor={"rgba(255,0,0, 0.5)"}
               customArrows={arrows}
+              customSquareStyles={{}}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function Three({ next, pre }) {
+    const [game, setGame] = useState(
+      new Chess("7k/r5pp/8/p7/8/7P/3R1PP1/6K1 b - - 0 1"),
+    );
+    const [arrows, setArrows] = useState([]);
+    const [squares, setSquares] = useState({});
+
+    function protect() {
+      game.undo();
+      game.move("Ra8");
+      setGame({ ...game });
+      setTimeout(() => {
+        setArrows([["a8", "h8"]]);
+      }, 300);
+    }
+
+    function move() {
+      game.undo();
+      game.move("h6");
+      setGame({ ...game });
+      setTimeout(() => {
+        setArrows([["h8", "h7"]]);
+      }, 300);
+    }
+
+    return (
+      <div className="flex">
+        <CheckmatesNav highlight1={true} />
+        <div className="container">
+          <div className="text-box">
+            <div className="text-title-div">
+              <h2 className="text-title">Protecting The Back Rank</h2>
+            </div>
+            <div className="text-body-div">
+              <p className="text-body">
+                The only pieces that can give back-rank mate are rooks and
+                queens. They are also the best protectors of the back rank.
+              </p>
+              <p className="text-body">
+                To protect your back rank, either do it with a piece, or move
+                your pawns to give your king a escape square in case of a check.
+              </p>
+              <div className="flex">
+                <button onClick={protect} className="lesson-btn">
+                  Protect
+                </button>
+                <button onClick={move} className="lesson-btn">
+                  Move Pawn
+                </button>
+              </div>
+            </div>
+            <div className="arrows-div">
+              <FontAwesomeIcon
+                onClick={pre}
+                className="left-arrow"
+                icon={faLeftLong}
+              />
+              <FontAwesomeIcon
+                onClick={next}
+                className="right-arrow"
+                icon={faRightLong}
+              />
+            </div>
+            <div className="pages-div">
+              <p className="pages-text">
+                {index + 1}/{sections.length}
+              </p>
+            </div>
+          </div>
+          <div style={{ pointerEvents: "none" }} className="board">
+            <Chessboard
+              position={game.fen()}
+              boardWidth={325}
+              areArrowsAllowed={false}
+              showBoardNotation={false}
+              arePiecesDraggable={false}
+              customArrowColor={"rgba(0,255,0, 0.5)"}
+              customArrows={arrows}
+              customSquareStyles={squares}
               boardOrientation={"black"}
             />
           </div>
@@ -254,41 +268,38 @@ export default function Page() {
 
   function Four({ next, pre }) {
     const [game, setGame] = useState(
-      new Chess("8/8/7p/3pk3/2n5/8/1B6/K7 b - - 0 1"),
+      new Chess("3r2k1/3r1pp1/7p/8/8/8/Q4PPP/6K1 w - - 0 1"),
     );
+    const [arrows, setArrows] = useState([]);
+    const [squares, setSquares] = useState({});
+    const [message, setMessage] = useState("");
 
-    const [arrows, setArrows] = useState([["b2", "e5"]]);
-
-    function blockCheck() {
-      game.move("d4");
+    function play() {
+      game.move("Qa1");
       setGame({ ...game });
       setTimeout(() => {
-        setArrows([]);
+        setMessage("White tries to protect the back rank with the queen.");
       }, 300);
     }
 
     return (
       <div className="flex">
-        <IntroNav highlight7={true} />
+        <CheckmatesNav highlight1={true} />
         <div className="container">
           <div className="text-box">
             <div className="text-title-div">
-              <h2 className="text-title">Responding to a Check</h2>
+              <h2 className="text-title">Protecting The Back Rank</h2>
             </div>
             <div className="text-body-div">
               <p className="text-body">
-                2- You can block the check by placing one of your pieces in
-                front of your king so that it's not attacked anymore.
+                Sometimes you can't protect your back rank with a single piece
+                because your opponent has a greater attacking force. Press the
+                button to see why.
               </p>
-              <button onClick={blockCheck} className="lesson-btn">
-                Block check
+              <button onClick={play} className="lesson-btn">
+                Play
               </button>
-              <p className="text-body">
-                <strong>Important:</strong> You{" "}
-                <span className="underline">cannot</span> block the check if the
-                piece that's attacking your king is a knight, because knights
-                can attack over other pieces.
-              </p>
+              <p className="text-body">{message}</p>
             </div>
             <div className="arrows-div">
               <FontAwesomeIcon
@@ -315,9 +326,9 @@ export default function Page() {
               areArrowsAllowed={false}
               showBoardNotation={false}
               arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
+              customArrowColor={"rgba(0,255,0, 0.5)"}
               customArrows={arrows}
-              boardOrientation={"black"}
+              customSquareStyles={squares}
             />
           </div>
         </div>
@@ -327,215 +338,122 @@ export default function Page() {
 
   function Five({ next, pre }) {
     const [game, setGame] = useState(
-      new Chess("8/8/7p/3pk3/2n5/8/1B6/K7 b - - 0 1"),
+      new Chess("3r2k1/3r1pp1/7p/8/8/8/5PPP/Q5K1 b - - 0 1"),
     );
+    const [arrows, setArrows] = useState([]);
+    const [squares, setSquares] = useState({});
+    const [message1, setMessage1] = useState("");
+    const [message2, setMessage2] = useState("");
+    const [visible, setVisible] = useState(false);
 
-    const [arrows, setArrows] = useState([["b2", "e5"]]);
-
-    function capturePiece() {
-      game.move("Nxb2");
+    function play1() {
+      game.move("Rd1");
       setGame({ ...game });
       setTimeout(() => {
-        setArrows([]);
+        setMessage1("Black gives the check anyway!");
+        setVisible(true);
+      }, 300);
+    }
+
+    function play2() {
+      game.move("Qxd1");
+      setGame({ ...game });
+      setTimeout(() => {
+        setMessage2(
+          "White has to take the rook because there is no other legal move to play.",
+        );
       }, 300);
     }
 
     return (
       <div className="flex">
-        <IntroNav highlight7={true} />
+        <CheckmatesNav highlight1={true} />
         <div className="container">
           <div className="text-box">
             <div className="text-title-div">
-              <h2 className="text-title">Responding to a Check</h2>
+              <h2 className="text-title">Protecting The Back Rank</h2>
+            </div>
+            <div className="text-body-div">
+              <p className="text-body">But it' not enough!</p>
+              <button onClick={play1} className="lesson-btn">
+                Play
+              </button>
+              <p className="text-body">{message1}</p>
+              {visible && (
+                <button onClick={play2} className="lesson-btn">
+                  Play
+                </button>
+              )}
+              <p className="text-body">{message2}</p>
+            </div>
+            <div className="arrows-div">
+              <FontAwesomeIcon
+                onClick={pre}
+                className="left-arrow"
+                icon={faLeftLong}
+              />
+              <FontAwesomeIcon
+                onClick={next}
+                className="right-arrow"
+                icon={faRightLong}
+              />
+            </div>
+            <div className="pages-div">
+              <p className="pages-text">
+                {index + 1}/{sections.length}
+              </p>
+            </div>
+          </div>
+          <div style={{ pointerEvents: "none" }} className="board">
+            <Chessboard
+              position={game.fen()}
+              boardWidth={325}
+              areArrowsAllowed={false}
+              showBoardNotation={false}
+              arePiecesDraggable={false}
+              customArrowColor={"rgba(0,255,0, 0.5)"}
+              customArrows={arrows}
+              customSquareStyles={squares}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function Six({ direct, pre }) {
+    const [game, setGame] = useState(
+      new Chess("3r2k1/5pp1/7p/8/8/8/5PPP/3Q2K1 b - - 0 1"),
+    );
+    const [arrows, setArrows] = useState([]);
+    const [squares, setSquares] = useState({});
+    const [message, setMessage] = useState("");
+
+    function play() {
+      game.move("Rxd1");
+      setGame({ ...game });
+      setTimeout(() => {
+        setArrows([["d1", "g1"]]);
+      }, 300);
+    }
+
+    return (
+      <div className="flex">
+        <CheckmatesNav highlight1={true} />
+        <div className="container">
+          <div className="text-box">
+            <div className="text-title-div">
+              <h2 className="text-title">Protecting The Back Rank</h2>
             </div>
             <div className="text-body-div">
               <p className="text-body">
-                3- You can capture the piece that's attacking your king.
+                And as you guessed, black takes the queen and checkmates white!
               </p>
-              <button onClick={capturePiece} className="lesson-btn">
-                capture
+              <button onClick={play} className="lesson-btn">
+                Play
               </button>
               <p className="text-body">
-                If you're in check and you can't do any of these three things,
-                you are lost!
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
-          </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customArrows={arrows}
-              boardOrientation={"black"}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function Six({ next, pre }) {
-    const [game, setGame] = useState(
-      new Chess("1k2Q3/ppp5/1q6/8/8/7P/5PP1/6K1 w - - 0 1"),
-    );
-
-    const [arrows, setArrows] = useState([["e8", "b8"]]);
-
-    return (
-      <div className="flex">
-        <IntroNav highlight7={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Checkmate</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                In this position black is in check, but can't get out of the
-                check. It can't get away from the queen's attack, it can't block
-                the check, and it can't capture the queen that is giving the
-                check.
-              </p>
-              <p className="text-body">
-                This is called a <strong>checkmate</strong>. In chess, the goal
-                is to give check in a way that is impossible to get out of,
-                which is the same as giving checkmate.
-              </p>
-              <p className="text-body">
-                The checkmate is also called a <strong>mate</strong>.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
-          </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customArrows={arrows}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function Seven({ next, pre }) {
-    const [game, setGame] = useState(
-      new Chess("1k2Q3/ppp5/1q6/8/8/7P/5PP1/6K1 w - - 0 1"),
-    );
-
-    const [arrows, setArrows] = useState([["e8", "b8"]]);
-
-    return (
-      <div className="flex">
-        <IntroNav highlight7={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Checkmate</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Black is in check and can't make a legal move. The game
-                automatically ends and white is the winner.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
-          </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customArrows={arrows}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function Eight({ direct, pre }) {
-    const [game, setGame] = useState(new Chess());
-
-    const [arrows, setArrows] = useState([]);
-
-    return (
-      <div className="flex">
-        <IntroNav highlight7={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Lesson Summary</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                In this lesson you learned board setup, names of the pieces,
-                their values, and how they move. You also learned how a game of
-                chess is won by checkmate. That's awesome!
-              </p>
-              <p className="text-body">
-                In the next lesson, you will learn some basic checkmates.
+                White lost because black had the advantage in numbers.
               </p>
             </div>
             <div className="arrows-div">
@@ -565,6 +483,7 @@ export default function Page() {
               arePiecesDraggable={false}
               customArrowColor={"rgba(255,0,0, 0.5)"}
               customArrows={arrows}
+              customSquareStyles={squares}
             />
           </div>
         </div>

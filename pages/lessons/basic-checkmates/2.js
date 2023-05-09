@@ -12,7 +12,7 @@ export default function Page() {
     <One next={next} />,
     <Two next={next} pre={pre} />,
     <Three next={next} pre={pre} />,
-    <Four next={next} pre={pre} />,
+    <Four direct={direct} pre={pre} />,
   ];
   const [index, setIndex] = useState(0);
 
@@ -126,8 +126,8 @@ export default function Page() {
               </p>
               <p style={{ paddingTop: "0px" }} className="text-body">
                 Whenever a side's queen hugs the opponent's king at the side of
-                the board like this and the queen is defended by a friendly
-                piece, it is checkmate.
+                the board like this and the queen can't be captured, it is
+                checkmate.
               </p>
               <p style={{ paddingTop: "0px" }} className="text-body">
                 White's using a battery to deliver mate, which is a common
@@ -183,6 +183,7 @@ export default function Page() {
         from: sourceSquare,
         to: targetSquare,
       });
+      if (move == null) return false;
       if (move.san == "Qd4") {
         setGame({ ...game });
         setMessage1("Well done :)");
@@ -192,7 +193,7 @@ export default function Page() {
         return true;
       } else {
         setGame({ ...game });
-        setMessage1(":( Keep trying");
+        setMessage1(":( Try again");
         setDraggable(false);
         setTimeout(() => {
           setMessage1("");
@@ -278,7 +279,7 @@ export default function Page() {
     );
   }
 
-  function Four({ next, pre }) {
+  function Four({ direct, pre }) {
     const [game, setGame] = useState(
       new Chess(
         "1br2r2/ppq2p1k/2p3pp/3p1b2/3Q4/1P5P/PBP1PPP1/2R1RBK1 w - - 0 21",
@@ -293,6 +294,7 @@ export default function Page() {
         from: sourceSquare,
         to: targetSquare,
       });
+      if (move == null) return false;
       if (move.san == "Qg7#") {
         setGame({ ...game });
         setMessage("Well done :) White wins.");
@@ -300,7 +302,7 @@ export default function Page() {
         return true;
       } else {
         setGame({ ...game });
-        setMessage("That's not the move");
+        setMessage("That's not the move!");
         setDraggable(false);
         setTimeout(() => {
           setMessage("");
@@ -333,7 +335,7 @@ export default function Page() {
                 icon={faLeftLong}
               />
               <FontAwesomeIcon
-                onClick={next}
+                onClick={direct}
                 className="right-arrow"
                 icon={faRightLong}
               />

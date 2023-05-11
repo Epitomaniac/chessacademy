@@ -40,69 +40,62 @@ export default function Page() {
     );
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Back Rank</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Your first row, where you put your king and other pieces behind
-                your pawns is called your <strong>back rank</strong>.
-              </p>
-              <p className="text-body">
-                The board shows both white's and black's back ranks.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Back Rank</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrows={[]}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customSquareStyles={{
-                a1: { backgroundColor: "#ff000080" },
-                b1: { backgroundColor: "#ff000080" },
-                c1: { backgroundColor: "#ff000080" },
-                d1: { backgroundColor: "#ff000080" },
-                e1: { backgroundColor: "#ff000080" },
-                f1: { backgroundColor: "#ff000080" },
-                g1: { backgroundColor: "#ff000080" },
-                h1: { backgroundColor: "#ff000080" },
-                h8: { backgroundColor: "#ff000080" },
-                a8: { backgroundColor: "#ff000080" },
-                b8: { backgroundColor: "#ff000080" },
-                c8: { backgroundColor: "#ff000080" },
-                d8: { backgroundColor: "#ff000080" },
-                e8: { backgroundColor: "#ff000080" },
-                f8: { backgroundColor: "#ff000080" },
-                g8: { backgroundColor: "#ff000080" },
-                h8: { backgroundColor: "#ff000080" },
-              }}
+          <div className="text-body-div">
+            <p className="text-body">
+              Your first row, where you put your king and other pieces behind
+              your pawns is called your <strong>back rank</strong>.
+            </p>
+            <p className="text-body">
+              The board shows both white's and black's back ranks.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrows={[]}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            customSquareStyles={{
+              a1: { backgroundColor: "#ff00005b" },
+              b1: { backgroundColor: "#ff00005b" },
+              c1: { backgroundColor: "#ff00005b" },
+              d1: { backgroundColor: "#ff00005b" },
+              e1: { backgroundColor: "#ff00005b" },
+              f1: { backgroundColor: "#ff00005b" },
+              g1: { backgroundColor: "#ff00005b" },
+              h1: { backgroundColor: "#ff00005b" },
+              a8: { backgroundColor: "#ff00005b" },
+              b8: { backgroundColor: "#ff00005b" },
+              c8: { backgroundColor: "#ff00005b" },
+              d8: { backgroundColor: "#ff00005b" },
+              e8: { backgroundColor: "#ff00005b" },
+              f8: { backgroundColor: "#ff00005b" },
+              g8: { backgroundColor: "#ff00005b" },
+              h8: { backgroundColor: "#ff00005b" },
+            }}
+          />
         </div>
       </div>
     );
@@ -123,57 +116,54 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Back Rank</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The back rank is important because the kings often stay there
-                for the majority of the game, and if you fail to protect your
-                back rank, unexpected checkmates could happen!
-              </p>
-              <button onClick={giveMate} className="lesson-btn">
-                Give mate
-              </button>
-              <p className="text-body">
-                Here white checkmates black because black's king is trapped
-                behind its own pawns and the back rank is left unprotected.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Back Rank</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customArrows={arrows}
-              customSquareStyles={{}}
+          <div className="text-body-div">
+            <p className="text-body">
+              The back rank is important because the kings often stay there for
+              the majority of the game, and if you fail to protect your back
+              rank, unexpected checkmates could happen!
+            </p>
+            <button onClick={giveMate} className="lesson-btn">
+              Give mate
+            </button>
+            <p className="text-body">
+              Here white checkmates black because black's king is trapped behind
+              its own pawns and the back rank is left unprotected.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            customArrows={arrows}
+            customSquareStyles={{}}
+          />
         </div>
       </div>
     );
@@ -205,62 +195,59 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Protecting The Back Rank</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The only pieces that can give back-rank mate are rooks and
-                queens. They are also the best protectors of the back rank.
-              </p>
-              <p className="text-body">
-                To protect your back rank, either do it with a piece, or move
-                your pawns to give your king a escape square in case of a check.
-              </p>
-              <div className="flex">
-                <button onClick={protect} className="lesson-btn">
-                  Protect
-                </button>
-                <button onClick={move} className="lesson-btn">
-                  Move Pawn
-                </button>
-              </div>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Protecting The Back Rank</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">
+              The only pieces that can give back-rank mate are rooks and queens.
+              They are also the best protectors of the back rank.
+            </p>
+            <p className="text-body">
+              To protect your back rank, either do it with a piece, or move your
+              pawns to give your king a escape square in case of a check.
+            </p>
+            <div className="flex">
+              <button onClick={protect} className="lesson-btn">
+                Protect
+              </button>
+              <button onClick={move} className="lesson-btn">
+                Move Pawn
+              </button>
             </div>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(0,255,0, 0.5)"}
-              customArrows={arrows}
-              customSquareStyles={squares}
-              boardOrientation={"black"}
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(0,255,0, 0.5)"}
+            customArrows={arrows}
+            customSquareStyles={squares}
+            boardOrientation={"black"}
+          />
         </div>
       </div>
     );
@@ -283,54 +270,51 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Protecting The Back Rank</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Sometimes you can't protect your back rank with a single piece
-                because your opponent has a greater attacking force. Press the
-                button to see why.
-              </p>
-              <button onClick={play} className="lesson-btn">
-                Play
-              </button>
-              <p className="text-body">{message}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Protecting The Back Rank</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(0,255,0, 0.5)"}
-              customArrows={arrows}
-              customSquareStyles={squares}
+          <div className="text-body-div">
+            <p className="text-body">
+              Sometimes you can't protect your back rank with a single piece
+              because your opponent has a greater attacking force. Press the
+              button to see why.
+            </p>
+            <button onClick={play} className="lesson-btn">
+              Play
+            </button>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(0,255,0, 0.5)"}
+            customArrows={arrows}
+            customSquareStyles={squares}
+          />
         </div>
       </div>
     );
@@ -366,56 +350,53 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Protecting The Back Rank</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">But it' not enough!</p>
-              <button onClick={play1} className="lesson-btn">
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Protecting The Back Rank</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">But it' not enough!</p>
+            <button onClick={play1} className="lesson-btn">
+              Play
+            </button>
+            <p className="text-body">{message1}</p>
+            {visible && (
+              <button onClick={play2} className="lesson-btn">
                 Play
               </button>
-              <p className="text-body">{message1}</p>
-              {visible && (
-                <button onClick={play2} className="lesson-btn">
-                  Play
-                </button>
-              )}
-              <p className="text-body">{message2}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            )}
+            <p className="text-body">{message2}</p>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(0,255,0, 0.5)"}
-              customArrows={arrows}
-              customSquareStyles={squares}
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(0,255,0, 0.5)"}
+            customArrows={arrows}
+            customSquareStyles={squares}
+          />
         </div>
       </div>
     );
@@ -438,58 +419,60 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Protecting The Back Rank</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                And as you guessed, black takes the queen and checkmates white!
-              </p>
-              <button onClick={play} className="lesson-btn">
-                Play
-              </button>
-              <p className="text-body">
-                White lost because black had the advantage in numbers.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Protecting The Back Rank</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customArrows={arrows}
-              customSquareStyles={squares}
+          <div className="text-body-div">
+            <p className="text-body">
+              And as you guessed, black takes the queen and checkmates white!
+            </p>
+            <button onClick={play} className="lesson-btn">
+              Play
+            </button>
+            <p className="text-body">
+              White lost because black had the advantage in numbers.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            customArrows={arrows}
+            customSquareStyles={squares}
+          />
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <CheckmatesNav highlight1={true} />
+      {sections[index]}
+    </div>
+  );
 }

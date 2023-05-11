@@ -284,61 +284,55 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Ranks and Files</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                As you can see on the screen, the game of chess is played on a
-                board with 64 (8 X 8) squares. Each horizontal row of squares is
-                called a<strong> rank</strong>, and each column of squares is
-                called a <strong>file</strong>.
-              </p>
-              <button
-                disabled={disabled}
-                onClick={showRanks}
-                className="lesson-btn"
-              >
-                Show ranks
-              </button>
-              <button
-                disabled={disabled}
-                onClick={showFiles}
-                className="lesson-btn"
-              >
-                Show files
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Ranks and Files</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              customSquareStyles={rankStyles}
+          <div className="text-body-div">
+            <p className="text-body">
+              As you can see on the screen, the game of chess is played on a
+              board with 64 (8 X 8) squares. Each horizontal row of squares is
+              called a<strong> rank</strong>, and each column of squares is
+              called a <strong>file</strong>.
+            </p>
+            <button
+              disabled={disabled}
+              onClick={showRanks}
+              className="lesson-btn"
+            >
+              Show ranks
+            </button>
+            <button
+              disabled={disabled}
+              onClick={showFiles}
+              className="lesson-btn"
+            >
+              Show files
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            customSquareStyles={rankStyles}
+          />
         </div>
       </div>
     );
@@ -577,60 +571,57 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Diagonals</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Each row of squares that are diagonally connected is called a
-                <strong> diagonal</strong>.
-              </p>
-              <button
-                disabled={disabled}
-                onClick={showLight}
-                className="lesson-btn"
-              >
-                Show light-square diagonals
-              </button>
-              <button
-                disabled={disabled}
-                onClick={showDark}
-                className="lesson-btn"
-              >
-                Show dark-square diagonals
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Diagonals</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              customSquareStyles={rankStyles}
+          <div className="text-body-div">
+            <p className="text-body">
+              Each row of squares that are diagonally connected is called a
+              <strong> diagonal</strong>.
+            </p>
+            <button
+              disabled={disabled}
+              onClick={showLight}
+              className="lesson-btn"
+            >
+              Show light-square diagonals
+            </button>
+            <button
+              disabled={disabled}
+              onClick={showDark}
+              className="lesson-btn"
+            >
+              Show dark-square diagonals
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            customSquareStyles={rankStyles}
+          />
         </div>
       </div>
     );
@@ -641,53 +632,55 @@ export default function Page() {
     chess.clear();
 
     return (
-      <div className="flex">
-        <IntroNav highlight1={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Board Placement</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                When placing the board on the table and before setting up the
-                pieces, make sure the bottom-right corner of the board is always
-                a light square.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Board Placement</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              customSquareStyles={{
-                h1: { backgroundColor: "rgba(255, 0, 0, 0.4)" },
-              }}
+          <div className="text-body-div">
+            <p className="text-body">
+              When placing the board on the table and before setting up the
+              pieces, make sure the bottom-right corner of the board is always a
+              light square.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            customSquareStyles={{
+              h1: { backgroundColor: "rgba(255, 0, 0, 0.4)" },
+            }}
+          />
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <IntroNav highlight1={true} />
+      {sections[index]}
+    </div>
+  );
 }

@@ -49,61 +49,55 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Piece Values</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">Select the side that has more value.</p>
-              <div className="quiz-img">
-                <div onClick={pickLeft} style={styleLeft} className="first-img">
-                  <Image
-                    alt="white pawn"
-                    width={40}
-                    height={40}
-                    src="/white_pawn.svg"
-                  ></Image>
-                  <Image
-                    alt="white pawn"
-                    width={40}
-                    height={40}
-                    src="/white_pawn.svg"
-                  ></Image>
-                </div>
-                <div
-                  onClick={pickRight}
-                  style={styleRight}
-                  className="second-img"
-                >
-                  <Image
-                    alt="black knight"
-                    width={40}
-                    height={40}
-                    src="/black_knight.svg"
-                  ></Image>
-                </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Piece Values</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Select the side that has more value.</p>
+            <div className="quiz-img">
+              <div onClick={pickLeft} style={styleLeft} className="first-img">
+                <Image
+                  alt="white pawn"
+                  width={40}
+                  height={40}
+                  src="/white_pawn.svg"
+                ></Image>
+                <Image
+                  alt="white pawn"
+                  width={40}
+                  height={40}
+                  src="/white_pawn.svg"
+                ></Image>
               </div>
-              <p className="text-body">{message}</p>
+              <div
+                onClick={pickRight}
+                style={styleRight}
+                className="second-img"
+              >
+                <Image
+                  alt="black knight"
+                  width={40}
+                  height={40}
+                  src="/black_knight.svg"
+                ></Image>
+              </div>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -127,74 +121,71 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Piece Values</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">Select the side that has more value.</p>
-              <div className="quiz-img">
-                <div onClick={pickLeft} style={styleLeft} className="first-img">
-                  <Image
-                    alt="white rook"
-                    width={40}
-                    height={40}
-                    src="/white_rook.svg"
-                  ></Image>
-                </div>
-                <div
-                  onClick={pickRight}
-                  style={styleRight}
-                  className="second-img"
-                >
-                  <Image
-                    alt="black pawn"
-                    width={40}
-                    height={40}
-                    src="/black_pawn.svg"
-                  ></Image>
-                  <Image
-                    alt="black pawn"
-                    width={40}
-                    height={40}
-                    src="/black_pawn.svg"
-                  ></Image>
-                  <Image
-                    alt="black pawn"
-                    width={40}
-                    height={40}
-                    src="/black_pawn.svg"
-                  ></Image>
-                  <Image
-                    alt="black pawn"
-                    width={40}
-                    height={40}
-                    src="/black_pawn.svg"
-                  ></Image>
-                </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Piece Values</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Select the side that has more value.</p>
+            <div className="quiz-img">
+              <div onClick={pickLeft} style={styleLeft} className="first-img">
+                <Image
+                  alt="white rook"
+                  width={40}
+                  height={40}
+                  src="/white_rook.svg"
+                ></Image>
               </div>
-              <p className="text-body">{message}</p>
+              <div
+                onClick={pickRight}
+                style={styleRight}
+                className="second-img"
+              >
+                <Image
+                  alt="black pawn"
+                  width={40}
+                  height={40}
+                  src="/black_pawn.svg"
+                ></Image>
+                <Image
+                  alt="black pawn"
+                  width={40}
+                  height={40}
+                  src="/black_pawn.svg"
+                ></Image>
+                <Image
+                  alt="black pawn"
+                  width={40}
+                  height={40}
+                  src="/black_pawn.svg"
+                ></Image>
+                <Image
+                  alt="black pawn"
+                  width={40}
+                  height={40}
+                  src="/black_pawn.svg"
+                ></Image>
+              </div>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -218,62 +209,59 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Piece Values</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">Select the side that has more value.</p>
-              <div className="quiz-img">
-                <div onClick={pickLeft} style={styleLeft} className="first-img">
-                  <Image
-                    alt="white bishop"
-                    width={40}
-                    height={40}
-                    src="/white_bishop.svg"
-                  ></Image>
-                  <Image
-                    alt="white knight"
-                    width={40}
-                    height={40}
-                    src="/white_knight.svg"
-                  ></Image>
-                </div>
-                <div
-                  onClick={pickRight}
-                  style={styleRight}
-                  className="second-img"
-                >
-                  <Image
-                    alt="black rook"
-                    width={40}
-                    height={40}
-                    src="/black_rook.svg"
-                  ></Image>
-                </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Piece Values</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Select the side that has more value.</p>
+            <div className="quiz-img">
+              <div onClick={pickLeft} style={styleLeft} className="first-img">
+                <Image
+                  alt="white bishop"
+                  width={40}
+                  height={40}
+                  src="/white_bishop.svg"
+                ></Image>
+                <Image
+                  alt="white knight"
+                  width={40}
+                  height={40}
+                  src="/white_knight.svg"
+                ></Image>
               </div>
-              <p className="text-body">{message}</p>
+              <div
+                onClick={pickRight}
+                style={styleRight}
+                className="second-img"
+              >
+                <Image
+                  alt="black rook"
+                  width={40}
+                  height={40}
+                  src="/black_rook.svg"
+                ></Image>
+              </div>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -297,62 +285,59 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Piece Values</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">Select the side that has more value.</p>
-              <div className="quiz-img">
-                <div onClick={pickLeft} style={styleLeft} className="first-img">
-                  <Image
-                    alt="white rook"
-                    width={40}
-                    height={40}
-                    src="/white_rook.svg"
-                  ></Image>
-                  <Image
-                    alt="white bishop"
-                    width={40}
-                    height={40}
-                    src="/white_bishop.svg"
-                  ></Image>
-                </div>
-                <div
-                  onClick={pickRight}
-                  style={styleRight}
-                  className="second-img"
-                >
-                  <Image
-                    alt="black queen"
-                    width={40}
-                    height={40}
-                    src="/black_queen.svg"
-                  ></Image>
-                </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Piece Values</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Select the side that has more value.</p>
+            <div className="quiz-img">
+              <div onClick={pickLeft} style={styleLeft} className="first-img">
+                <Image
+                  alt="white rook"
+                  width={40}
+                  height={40}
+                  src="/white_rook.svg"
+                ></Image>
+                <Image
+                  alt="white bishop"
+                  width={40}
+                  height={40}
+                  src="/white_bishop.svg"
+                ></Image>
               </div>
-              <p className="text-body">{message}</p>
+              <div
+                onClick={pickRight}
+                style={styleRight}
+                className="second-img"
+              >
+                <Image
+                  alt="black queen"
+                  width={40}
+                  height={40}
+                  src="/black_queen.svg"
+                ></Image>
+              </div>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -376,67 +361,69 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Piece Values</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">Select the side that has more value.</p>
-              <div className="quiz-img">
-                <div onClick={pickLeft} style={styleLeft} className="first-img">
-                  <Image
-                    alt="white queen"
-                    width={40}
-                    height={40}
-                    src="/white_queen.svg"
-                  ></Image>
-                </div>
-                <div
-                  onClick={pickRight}
-                  style={styleRight}
-                  className="second-img"
-                >
-                  <Image
-                    alt="black rook"
-                    width={40}
-                    height={40}
-                    src="/black_rook.svg"
-                  ></Image>
-                  <Image
-                    alt="black rook"
-                    width={40}
-                    height={40}
-                    src="/black_rook.svg"
-                  ></Image>
-                </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Piece Values</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Select the side that has more value.</p>
+            <div className="quiz-img">
+              <div onClick={pickLeft} style={styleLeft} className="first-img">
+                <Image
+                  alt="white queen"
+                  width={40}
+                  height={40}
+                  src="/white_queen.svg"
+                ></Image>
               </div>
-              <p className="text-body">{message}</p>
+              <div
+                onClick={pickRight}
+                style={styleRight}
+                className="second-img"
+              >
+                <Image
+                  alt="black rook"
+                  width={40}
+                  height={40}
+                  src="/black_rook.svg"
+                ></Image>
+                <Image
+                  alt="black rook"
+                  width={40}
+                  height={40}
+                  src="/black_rook.svg"
+                ></Image>
+              </div>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <IntroNav highlight4={true} />
+      {sections[index]}
+    </div>
+  );
 }

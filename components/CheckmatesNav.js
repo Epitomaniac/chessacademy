@@ -6,6 +6,10 @@ export default function IntroNav({
   highlight3,
   highlight4,
   highlight5,
+  highlight6,
+  highlight7,
+  highlight8,
+  highlight9,
 }) {
   const router = useRouter();
   return (
@@ -46,6 +50,34 @@ export default function IntroNav({
           className="navbar-lesson"
         >
           Two Rooks vs King
+        </li>
+        <li
+          style={highlight6 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/basic-checkmates/6")}
+          className="navbar-lesson"
+        >
+          King & Queen vs King
+        </li>
+        <li
+          style={highlight7 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/basic-checkmates/7")}
+          className="navbar-lesson"
+        >
+          Exercise: Q + R vs K
+        </li>
+        <li
+          style={highlight8 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/basic-checkmates/8")}
+          className="navbar-lesson"
+        >
+          Exercise: R + R vs K
+        </li>
+        <li
+          style={highlight9 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/basic-checkmates/9")}
+          className="navbar-lesson"
+        >
+          Exercise: K + Q vs K
         </li>
       </ul>
     </div>

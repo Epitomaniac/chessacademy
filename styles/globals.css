@@ -165,6 +165,7 @@ a:active {
 
 .left-arrow {
   font-size: 30px;
+  color: #201f1f;
 }
 
 .left-arrow-locked {
@@ -174,6 +175,7 @@ a:active {
 
 .right-arrow {
   font-size: 30px;
+  color: #201f1f;
 }
 
 .left-arrow:hover,

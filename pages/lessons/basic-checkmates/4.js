@@ -43,40 +43,34 @@ export default function Page() {
 
   function One({ next }) {
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Checkmates: to Give or to Get?</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                In previous sections we became familiar with some common
-                checkmate positions that can occur during a game of chess.
-              </p>
-              <p className="text-body">
-                But not all checkmates are as sudden and short as we saw
-                previously. Most of the times you have to force checkmate,
-                rather than your opponent giving it to you by mistake.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Checkmates: to Give or to Get?</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">
+              In previous sections we became familiar with some common checkmate
+              positions that can occur during a game of chess.
+            </p>
+            <p className="text-body">
+              But not all checkmates are as sudden and short as we saw
+              previously. Most of the times you have to force checkmate, rather
+              than your opponent giving it to you by mistake.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -94,41 +88,38 @@ export default function Page() {
     const [draggable, setDraggable] = useState(false);
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Checkmates Are Earned</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Suppose after a long fight you are left with a queen and a rook
-                and your opponent has only a king.
-              </p>
-              <p className="text-body">
-                You obviously have a winning position, but checkmates don't
-                happen on their own! You need to deliver them, and how you can
-                do that requires both knowledge and skill.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Checkmates Are Earned</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">
+              Suppose after a long fight you are left with a queen and a rook
+              and your opponent has only a king.
+            </p>
+            <p className="text-body">
+              You obviously have a winning position, but checkmates don't happen
+              on their own! You need to deliver them, and how you can do that
+              requires both knowledge and skill.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -142,56 +133,53 @@ export default function Page() {
     const [arrows, setArrows] = useState([]);
     const [draggable, setDraggable] = useState(false);
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Edge vs The Center</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                In this position, what advantage do you think the white king has
-                over his black counterpart? If your answer is that white's king
-                has more freedom of movement, then your are correct.
-              </p>
-              <p className="text-body">
-                White's king has three ranks to move to while black has only
-                two, because he is standing at the edge of the board. Usually,
-                the more chess pieces move toward the center of the board, the
-                more free they become.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Edge vs The Center</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">
+              In this position, what advantage do you think the white king has
+              over his black counterpart? If your answer is that white's king
+              has more freedom of movement, then your are correct.
+            </p>
+            <p className="text-body">
+              White's king has three ranks to move to while black has only two,
+              because he is standing at the edge of the board. More often than
+              not, when chess pieces move toward the center of the board, they
+              become more free.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -199,7 +187,7 @@ export default function Page() {
 
   function Four({ next, pre }) {
     const [game, setGame] = useState(
-      new Chess("1Q2k3/R7/8/8/8/8/6K1/8 w - - 0 1"),
+      new Chess("1Q2k3/R7/8/8/8/4K3/8/8 w - - 0 1"),
     );
     const [arrows, setArrows] = useState([
       ["a7", "h7"],
@@ -208,56 +196,52 @@ export default function Page() {
     const [draggable, setDraggable] = useState(false);
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Mate on the Edge</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                By now you must have realized that giving checkmate is all about
-                limiting the freedom of your opponent's king as much as
-                possible. When facing a lonely king, usually the most efficient
-                way to give mate is to force him to the edge of the board.
-              </p>
-              <p className="text-body">
-                Take a look at this position; the white rook is controlling all
-                of black king's escape squares while the queen is delivering
-                mate.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Mate on the Edge</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">
+              By now you must have realized that giving checkmate is all about
+              limiting the freedom of your opponent's king as much as possible.
+              When facing a lonely king, usually the most efficient way to give
+              mate is to force him to the edge of the board.
+            </p>
+            <p className="text-body">
+              Take a look at this position; the white rook is controlling all of
+              black king's escape squares while the queen is delivering mate.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -269,55 +253,52 @@ export default function Page() {
     const [draggable, setDraggable] = useState(false);
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Cage</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The secret to understanding how a checkmate is delivered is to
-                imagine your opponent's king in a cage.
-              </p>
-              <p className="text-body">
-                On an empty board, the king is imprisoned in an 8 X 8 cage. This
-                is as big as the cage can ever be because the king has all the
-                64 squares to go to. But what happens if we place a major piece
-                on the board, like a rook for example?
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Cage</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">
+              The secret to understanding how a checkmate is delivered is to
+              imagine your opponent's king in a cage.
+            </p>
+            <p className="text-body">
+              On an empty board, the king is imprisoned in an 8 X 8 cage. This
+              is as big as the cage can ever be since the king has all the 64
+              squares to go to. But what happens if we place a major piece on
+              the board, like a rook for example?
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -334,56 +315,53 @@ export default function Page() {
     const [draggable, setDraggable] = useState(false);
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Cage</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Now his highness can't enjoy the royal freedom he used to have
-                with an empty board! The king is now in a 5 X 5 cage, which is
-                only 25 squares.
-              </p>
-              <p className="text-body">
-                Since checkmate is about limiting{" "}
-                <span className="underline">all</span> of the squares a king has
-                access to, our goal is to force the king to an area of the board
-                that gives him less freedom, which is one of the 4 edges.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Cage</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">
+              Now his highness can't enjoy the royal freedom he used to have
+              with an empty board! The king is now in a 5 X 5 cage, which is
+              only 25 squares.
+            </p>
+            <p className="text-body">
+              Since checkmate is about limiting{" "}
+              <span className="underline">all</span> of the squares a king has
+              access to, our goal is to force the king to an area of the board
+              that gives him less freedom, which is one of the 4 edges.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -409,55 +387,52 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Alright, now we know what to do: 1-Force the king to the edge of
-                the board; it doesn't matter which one. In this case we have
-                chosen the top edge of the board. 2-Deliver checkmate once the
-                king is trapped.
-              </p>
-              <button onClick={play} className="lesson-btn">
-                Play
-              </button>
-              <p className="text-body">{message}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Ladder</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">
+              Alright, now we know what to do: 1-Force the king to the edge of
+              the board; it doesn't matter which one. In this case we have
+              chosen the top edge of the board. 2-Deliver checkmate once the
+              king is trapped.
+            </p>
+            <button onClick={play} className="lesson-btn">
+              Play
+            </button>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -489,9 +464,6 @@ export default function Page() {
       game.move("Qa4");
       setGame({ ...game });
       setTimeout(() => {
-        setMessage2(
-          "We forced the king back. Notice that we didn't move the rook because it was already doing its job. Don't move a piece twice unless it's necessary.",
-        );
         setArrows([
           ["a4", "h4"],
           ["b3", "h3"],
@@ -504,56 +476,56 @@ export default function Page() {
           ["b3", "h3"],
         ]);
         setGame({ ...game });
+        setMessage2(
+          "We forced the king back. Notice that we didn't move the rook because it was already doing its job. Don't move a piece twice unless it's necessary.",
+        );
       }, 1500);
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">{message1}</p>
-              {visible1 && (
-                <button onClick={play} className="lesson-btn">
-                  Play
-                </button>
-              )}
-              <p className="text-body">{message2}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Ladder</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">{message1}</p>
+            {visible1 && (
+              <button onClick={play} className="lesson-btn">
+                Play
+              </button>
+            )}
+            <p className="text-body">{message2}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -596,72 +568,69 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">{message1}</p>
-              {visible1 && (
-                <>
-                  <div
-                    style={styleFirst}
-                    onClick={pickFirst}
-                    className="first-option"
-                  >
-                    <p className="text-body">
-                      Limit the rank under the king so that it can't come down
-                      again.
-                    </p>
-                  </div>
-                  <div
-                    style={styleSecond}
-                    onClick={pickSecond}
-                    className="second-option"
-                  >
-                    <p className="text-body">
-                      Give a check trying to force the king further back.
-                    </p>
-                  </div>
-                </>
-              )}
-              <p style={{ paddingTop: "0px" }} className="text-body">
-                {message2}
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Ladder</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">{message1}</p>
+            {visible1 && (
+              <>
+                <div
+                  style={styleFirst}
+                  onClick={pickFirst}
+                  className="first-option"
+                >
+                  <p className="text-body">
+                    Limit the rank under the king so that it can't come down
+                    again.
+                  </p>
+                </div>
+                <div
+                  style={styleSecond}
+                  onClick={pickSecond}
+                  className="second-option"
+                >
+                  <p className="text-body">
+                    Give a check trying to force the king further back.
+                  </p>
+                </div>
+              </>
+            )}
+            <p style={{ paddingTop: "0px" }} className="text-body">
+              {message2}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -680,67 +649,62 @@ export default function Page() {
       game.move("Qa6");
       setGame({ ...game });
       setTimeout(() => {
-        setMessage1(
-          "The king moved down the board and we have to repeat the same process again.",
-        );
-        setMessage2(
-          "Beginners love to give meaningless checks when they can, but you're better than them, right?",
-        );
-      }, 300);
-      setTimeout(() => {
         game.move("Ke5");
         setGame({ ...game });
+        setTimeout(() => {
+          setMessage1(
+            "The king moved down the board and we have to repeat the same process again.",
+          );
+          setMessage2(
+            "Beginners love to give meaningless checks when they can, but you're better than them, right?",
+          );
+        }, 300);
       }, 1000);
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Giving the check here achieves nothing.
-              </p>
-              <button onClick={play} className="lesson-btn">
-                Play
-              </button>
-              <p className="text-body">{message1}</p>
-              <p className="text-body">{message2}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Checks are a Means </h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">Giving the check here achieves nothing.</p>
+            <button onClick={play} className="lesson-btn">
+              Play
+            </button>
+            <p className="text-body">{message1}</p>
+            <p className="text-body">{message2}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -795,62 +759,55 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Instead of giving check, we close the southern border.
-              </p>
-              <button
-                disabled={disabled}
-                onClick={play1}
-                className="lesson-btn"
-              >
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Ladder</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">
+              Instead of giving check, we close the southern border.
+            </p>
+            <button disabled={disabled} onClick={play1} className="lesson-btn">
+              Play
+            </button>
+            <p className="text-body">{message1}</p>
+            {visible && (
+              <button onClick={play2} className="lesson-btn">
                 Play
               </button>
-              <p className="text-body">{message1}</p>
-              {visible && (
-                <button onClick={play2} className="lesson-btn">
-                  Play
-                </button>
-              )}
-              <p className="text-body">{message2}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            )}
+            <p className="text-body">{message2}</p>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
@@ -939,51 +896,48 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">You know what to do right?</p>
-              <p className="text-body">{message}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Ladder</h2>
           </div>
-          <div
-            style={!clickable ? { pointerEvents: "none" } : null}
-            className="board"
-          >
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
-              onPieceDrop={makeMove}
+          <div className="text-body-div">
+            <p className="text-body">You know what to do right?</p>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div
+          style={!clickable ? { pointerEvents: "none" } : null}
+          className="board"
+        >
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+            onPieceDrop={makeMove}
+          />
         </div>
       </div>
     );
@@ -997,60 +951,62 @@ export default function Page() {
     const [draggable, setDraggable] = useState(false);
 
     return (
-      <div className="flex">
-        <CheckmatesNav highlight4={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Ladder</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                This type of checkmate where we push the opponent's king back
-                row by row is called <strong>ladder mate</strong>. You don't
-                have to follow this method though; you can deliver checkmate
-                however you like. But a methodical approach is best when you're
-                just learning the game.
-              </p>
-              <p className="text-body">
-                Just be careful not to lose your rook and don't give check if it
-                doesn't force the king back.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Ladder</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={draggable}
-              customArrows={arrows}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              boardOrientation={"white"}
+          <div className="text-body-div">
+            <p className="text-body">
+              This type of checkmate where we push the opponent's king back row
+              by row is called <strong>ladder mate</strong>. You don't have to
+              follow this method though; you can deliver checkmate however you
+              like. But a methodical approach is best when you're just learning
+              the game.
+            </p>
+            <p className="text-body">
+              Just be careful not to lose your rook and don't give check if it
+              doesn't give mate or force the king back.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrows={arrows}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            boardOrientation={"white"}
+          />
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <CheckmatesNav highlight4={true} />
+      {sections[index]}
+    </div>
+  );
 }

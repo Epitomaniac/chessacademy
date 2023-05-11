@@ -42,47 +42,41 @@ export default function Page() {
     chess.clear();
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Start</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Each side begins the game with 16 pieces; 1 king, 1 queen, 2
-                rooks, 2 bishops, 2 knights, and 8 pawns.
-              </p>
-              <p className="text-body">
-                One side has the white pieces and the other the black pieces.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Start</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              Each side begins the game with 16 pieces; 1 king, 1 queen, 2
+              rooks, 2 bishops, 2 knights, and 8 pawns.
+            </p>
+            <p className="text-body">
+              One side has the white pieces and the other the black pieces.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+          />
         </div>
       </div>
     );
@@ -98,63 +92,60 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Rook</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">This is the rook:</p>
-              <p className="text-body">
-                <Image
-                  alt="white rook"
-                  width={45}
-                  height={45}
-                  src="/white_rook.svg"
-                ></Image>
-                <Image
-                  alt="black rook"
-                  width={45}
-                  height={45}
-                  src="/black_rook.svg"
-                ></Image>
-              </p>
-              <p className="text-body">
-                Rooks are placed at the corners for each side.
-              </p>
-              <button onClick={placeRooks} className="lesson-btn">
-                Place rooks
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Rook</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={fen}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">This is the rook:</p>
+            <p className="text-body">
+              <Image
+                alt="white rook"
+                width={45}
+                height={45}
+                src="/white_rook.svg"
+              ></Image>
+              <Image
+                alt="black rook"
+                width={45}
+                height={45}
+                src="/black_rook.svg"
+              ></Image>
+            </p>
+            <p className="text-body">
+              Rooks are placed at the corners for each side.
+            </p>
+            <button onClick={placeRooks} className="lesson-btn">
+              Place rooks
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={fen}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -169,64 +160,60 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Knight</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">This is the knight:</p>
-              <p className="text-body">
-                <Image
-                  alt="white knight"
-                  width={45}
-                  height={45}
-                  src="/white_knight.svg"
-                ></Image>
-                <Image
-                  alt="black knight"
-                  width={45}
-                  height={45}
-                  src="/black_knight.svg"
-                ></Image>
-              </p>
-              <p className="text-body">
-                Knights are placed beside the rooks (second square from the
-                side).
-              </p>
-              <button onClick={placeKnights} className="lesson-btn">
-                Place knights
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Knight</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={fen}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">This is the knight:</p>
+            <p className="text-body">
+              <Image
+                alt="white knight"
+                width={45}
+                height={45}
+                src="/white_knight.svg"
+              ></Image>
+              <Image
+                alt="black knight"
+                width={45}
+                height={45}
+                src="/black_knight.svg"
+              ></Image>
+            </p>
+            <p className="text-body">
+              Knights are placed beside the rooks (second square from the side).
+            </p>
+            <button onClick={placeKnights} className="lesson-btn">
+              Place knights
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={fen}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -241,64 +228,61 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Bishop</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">This is the bishop:</p>
-              <p className="text-body">
-                <Image
-                  alt="white bishop"
-                  width={45}
-                  height={45}
-                  src="/white_bishop.svg"
-                ></Image>
-                <Image
-                  alt="black bishop"
-                  width={45}
-                  height={45}
-                  src="/black_bishop.svg"
-                ></Image>
-              </p>
-              <p className="text-body">
-                Bishops are placed beside the knights (third square from the
-                side).
-              </p>
-              <button onClick={placeBishops} className="lesson-btn">
-                Place bishops
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Bishop</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={fen}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">This is the bishop:</p>
+            <p className="text-body">
+              <Image
+                alt="white bishop"
+                width={45}
+                height={45}
+                src="/white_bishop.svg"
+              ></Image>
+              <Image
+                alt="black bishop"
+                width={45}
+                height={45}
+                src="/black_bishop.svg"
+              ></Image>
+            </p>
+            <p className="text-body">
+              Bishops are placed beside the knights (third square from the
+              side).
+            </p>
+            <button onClick={placeBishops} className="lesson-btn">
+              Place bishops
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={fen}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -313,69 +297,66 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Queen</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">This is the queen:</p>
-              <p className="text-body">
-                <Image
-                  alt="white queen"
-                  width={45}
-                  height={45}
-                  src="/white_queen.svg"
-                ></Image>
-                <Image
-                  alt="black queen"
-                  width={45}
-                  height={45}
-                  src="/black_queen.svg"
-                ></Image>
-              </p>
-              <p className="text-body">
-                The queen is placed beside the bishop on the square with the
-                same color as the piece. So a white queen is placed on a light
-                square, while a black queen is placed on a dark square.
-              </p>
-              <button
-                style={{ marginTop: "0px" }}
-                onClick={placeQueens}
-                className="lesson-btn"
-              >
-                Place the queen
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Queen</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={fen}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">This is the queen:</p>
+            <p className="text-body">
+              <Image
+                alt="white queen"
+                width={45}
+                height={45}
+                src="/white_queen.svg"
+              ></Image>
+              <Image
+                alt="black queen"
+                width={45}
+                height={45}
+                src="/black_queen.svg"
+              ></Image>
+            </p>
+            <p className="text-body">
+              The queen is placed beside the bishop on the square with the same
+              color as the piece. So a white queen is placed on a light square,
+              while a black queen is placed on a dark square.
+            </p>
+            <button
+              style={{ marginTop: "0px" }}
+              onClick={placeQueens}
+              className="lesson-btn"
+            >
+              Place the queen
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={fen}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -390,69 +371,66 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The King</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">This is the king:</p>
-              <p className="text-body">
-                <Image
-                  alt="white king"
-                  width={45}
-                  height={45}
-                  src="/white_king.svg"
-                ></Image>
-                <Image
-                  alt="black king"
-                  width={45}
-                  height={45}
-                  src="/black_king.svg"
-                ></Image>
-              </p>
-              <p style={{ paddingTop: "0" }} className="text-body">
-                The king is placed beside the bishop on the square that has the
-                opposite color as the piece. So a white king is placed on a dark
-                square, while a black king is placed on a light square.
-              </p>
-              <button
-                style={{ marginTop: "0" }}
-                onClick={placeKings}
-                className="lesson-btn"
-              >
-                Place the king
-              </button>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The King</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={fen}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">This is the king:</p>
+            <p className="text-body">
+              <Image
+                alt="white king"
+                width={45}
+                height={45}
+                src="/white_king.svg"
+              ></Image>
+              <Image
+                alt="black king"
+                width={45}
+                height={45}
+                src="/black_king.svg"
+              ></Image>
+            </p>
+            <p style={{ paddingTop: "0" }} className="text-body">
+              The king is placed beside the bishop on the square that has the
+              opposite color as the piece. So a white king is placed on a dark
+              square, while a black king is placed on a light square.
+            </p>
+            <button
+              style={{ marginTop: "0" }}
+              onClick={placeKings}
+              className="lesson-btn"
+            >
+              Place the king
+            </button>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={fen}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -470,69 +448,66 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Pawn</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">This is the pawn:</p>
-              <p className="text-body">
-                <Image
-                  alt="white pawn"
-                  width={45}
-                  height={45}
-                  src="/white_pawn.svg"
-                ></Image>
-                <Image
-                  alt="black pawn"
-                  width={45}
-                  height={45}
-                  src="/black_pawn.svg"
-                ></Image>
-              </p>
-              <p className="text-body">
-                The pawns are placed next to each other on the rank that is in
-                front of the pieces.
-              </p>
-              <button onClick={placePawns} className="lesson-btn">
-                Place the pawns
-              </button>
-              {message && (
-                <p className="text-body">
-                  There you go! Now all the pieces are placed.
-                </p>
-              )}
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Pawn</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={fen}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">This is the pawn:</p>
+            <p className="text-body">
+              <Image
+                alt="white pawn"
+                width={45}
+                height={45}
+                src="/white_pawn.svg"
+              ></Image>
+              <Image
+                alt="black pawn"
+                width={45}
+                height={45}
+                src="/black_pawn.svg"
+              ></Image>
+            </p>
+            <p className="text-body">
+              The pawns are placed next to each other on the rank that is in
+              front of the pieces.
+            </p>
+            <button onClick={placePawns} className="lesson-btn">
+              Place the pawns
+            </button>
+            {message && (
+              <p className="text-body">
+                There you go! Now all the pieces are placed.
+              </p>
+            )}
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={fen}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -677,58 +652,58 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight2={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Starting Position</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Can you set the starting position now?
-              </p>
-              <p className="text-body">
-                Click the button after you're finished setting up the pieces.
-              </p>
-              <div className="lesson-btn-div">
-                <button onClick={done} className="lesson-btn">
-                  Done
-                </button>
-              </div>
-              {message && <p className="text-body">{message}</p>}
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Starting Position</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              position={position}
-              onPieceDrop={movePiece}
+          <div className="text-body-div">
+            <p className="text-body">Can you set the starting position now?</p>
+            <p className="text-body">
+              Click the button after you're finished setting up the pieces.
+            </p>
+            <div className="lesson-btn-div">
+              <button onClick={done} className="lesson-btn">
+                Done
+              </button>
+            </div>
+            {message && <p className="text-body">{message}</p>}
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            position={position}
+            onPieceDrop={movePiece}
+          />
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <IntroNav highlight2={true} />
+      {sections[index]}
+    </div>
+  );
 }

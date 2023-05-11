@@ -53,49 +53,43 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Can the rook move backwards?</p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">Yes</p>
             </div>
-            <div className="text-body-div">
-              <p className="text-body">Can the rook move backwards?</p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">Yes</p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">No</p>
-              </div>
-              <p style={{ marginTop: "20px" }} className="text-body">
-                {message}
-              </p>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">No</p>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p style={{ marginTop: "20px" }} className="text-body">
+              {message}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -119,52 +113,49 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">
+              Can a dark-squared bishop move to a light square?
+            </p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">Yes</p>
             </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Can a dark-squared bishop move to a light square?
-              </p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">Yes</p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">No</p>
-              </div>
-              <p style={{ marginTop: "20px" }} className="text-body">
-                {message}
-              </p>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">No</p>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p style={{ marginTop: "20px" }} className="text-body">
+              {message}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -199,72 +190,69 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                How many moves does it take for the knight to go to the
-                highlighted square?
-              </p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">1</p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">2</p>
-              </div>
-              <div
-                onClick={pickThird}
-                style={styleThird}
-                className="third-option"
-              >
-                <p className="option-text">3</p>
-              </div>
-              <p style={{ marginTop: "0px" }} className="text-body">
-                {message}
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customSquareStyles={{ f4: { backgroundColor: "#ff0000cc" } }}
+          <div className="text-body-div">
+            <p className="text-body">
+              How many moves does it take for the knight to go to the
+              highlighted square?
+            </p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">1</p>
+            </div>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">2</p>
+            </div>
+            <div
+              onClick={pickThird}
+              style={styleThird}
+              className="third-option"
+            >
+              <p className="option-text">3</p>
+            </div>
+            <p style={{ marginTop: "0px" }} className="text-body">
+              {message}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            customSquareStyles={{ f4: { backgroundColor: "#ff0000cc" } }}
+          />
         </div>
       </div>
     );
@@ -298,72 +286,69 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                How many moves does it take for the knight to go to the
-                highlighted square?
-              </p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">2</p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">3</p>
-              </div>
-              <div
-                onClick={pickThird}
-                style={styleThird}
-                className="third-option"
-              >
-                <p className="option-text">4</p>
-              </div>
-              <p style={{ marginTop: "0px" }} className="text-body">
-                {message}
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
-              customSquareStyles={{ d5: { backgroundColor: "#ff0000cc" } }}
+          <div className="text-body-div">
+            <p className="text-body">
+              How many moves does it take for the knight to go to the
+              highlighted square?
+            </p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">2</p>
+            </div>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">3</p>
+            </div>
+            <div
+              onClick={pickThird}
+              style={styleThird}
+              className="third-option"
+            >
+              <p className="option-text">4</p>
+            </div>
+            <p style={{ marginTop: "0px" }} className="text-body">
+              {message}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            customSquareStyles={{ d5: { backgroundColor: "#ff0000cc" } }}
+          />
         </div>
       </div>
     );
@@ -386,50 +371,47 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Can a queen jump over other pieces?</p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">Yes</p>
             </div>
-            <div className="text-body-div">
-              <p className="text-body">Can a queen jump over other pieces?</p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">Yes</p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">No</p>
-              </div>
-              <p style={{ marginTop: "20px" }} className="text-body">
-                {message}
-              </p>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">No</p>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p style={{ marginTop: "20px" }} className="text-body">
+              {message}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -453,52 +435,47 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Hwo does a king move?</p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">In a straight line and only forward</p>
             </div>
-            <div className="text-body-div">
-              <p className="text-body">Hwo does a king move?</p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">
-                  In a straight line and only forward
-                </p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">One square in every direction</p>
-              </div>
-              <p style={{ marginTop: "20px" }} className="text-body">
-                {message}
-              </p>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">One square in every direction</p>
             </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+            <p style={{ marginTop: "20px" }} className="text-body">
+              {message}
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
           </div>
         </div>
       </div>
@@ -525,63 +502,60 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">Can white's pawn move?</p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">
-                  Yes because it can jump two squares if it is its first move
-                </p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">
-                  No because it's blocked by black's pawn
-                </p>
-              </div>
-              <p className="text-body">{message}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">Can white's pawn move?</p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">
+                Yes because it can jump two squares if it is its first move
               </p>
             </div>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">
+                No because it's blocked by black's pawn
+              </p>
+            </div>
+            <p className="text-body">{message}</p>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+          />
         </div>
       </div>
     );
@@ -607,69 +581,71 @@ export default function Page() {
     }
 
     return (
-      <div className="flex">
-        <IntroNav highlight6={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">Quiz: Movement</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Can white's pawn capture black's knight?
-              </p>
-              <div
-                onClick={pickFirst}
-                style={styleFirst}
-                className="first-option"
-              >
-                <p className="option-text">
-                  No because pawns don't move backwards
-                </p>
-              </div>
-              <div
-                onClick={pickSecond}
-                style={styleSecond}
-                className="second-option"
-              >
-                <p className="option-text">
-                  Yes because pawns capture diagonally
-                </p>
-              </div>
-              <p className="text-body">{message}</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Quiz: Movement</h2>
           </div>
-          <div style={{ pointerEvents: "none" }} className="board">
-            <Chessboard
-              position={game.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
-              customArrowColor={"rgba(255,0,0, 0.5)"}
+          <div className="text-body-div">
+            <p className="text-body">
+              Can white's pawn capture black's knight?
+            </p>
+            <div
+              onClick={pickFirst}
+              style={styleFirst}
+              className="first-option"
+            >
+              <p className="option-text">
+                No because pawns don't move backwards
+              </p>
+            </div>
+            <div
+              onClick={pickSecond}
+              style={styleSecond}
+              className="second-option"
+            >
+              <p className="option-text">
+                Yes because pawns capture diagonally
+              </p>
+            </div>
+            <p className="text-body">{message}</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div style={{ pointerEvents: "none" }} className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+          />
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <IntroNav highlight6={true} />
+      {sections[index]}
+    </div>
+  );
 }

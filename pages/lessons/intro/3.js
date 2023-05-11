@@ -40,50 +40,44 @@ export default function Page() {
     chess.clear();
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Value of Pieces</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                Just like in the army where some units or assets are more
-                valuable than others, in chess some pieces have more value
-                compared to other pieces.
-              </p>
-              <p className="text-body">
-                Of course a piece having less value doesn't mean that you should
-                carelessly lose it! Every piece is valuable in its own right.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                className="left-arrow-locked"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Value of Pieces</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              Just like in the army where some units or assets are more valuable
+              than others, in chess some pieces have more value compared to
+              other pieces.
+            </p>
+            <p className="text-body">
+              Of course a piece having less value doesn't mean that you should
+              carelessly lose it! Every piece is valuable in its own right.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon className="left-arrow-locked" icon={faLeftLong} />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -93,47 +87,44 @@ export default function Page() {
     const chess = new Chess("8/8/8/P1p5/8/8/8/8 w - - 0 1");
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Pawn</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The pawn is the least valuable piece. Because of this fact, the
-                values of all pieces except for the king are measured in pawns.
-                So a pawn is worth 1 pawn, duh.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Pawn</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              The pawn is the least valuable piece. Because of this fact, the
+              values of all pieces except for the king are measured in pawns. So
+              a pawn is worth 1 pawn, duh.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -143,43 +134,40 @@ export default function Page() {
     const chess = new Chess("8/8/8/N1ppp3/8/8/8/8 w - - 0 1");
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Knight</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">The Knight is worth about 3 pawns.</p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Knight</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">The Knight is worth about 3 pawns.</p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -189,49 +177,46 @@ export default function Page() {
     const chess = new Chess("8/8/8/B1ppp3/8/8/8/8 w - - 0 1");
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Bishop</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The Bishop is also worth about 3 pawns. So a knight and a bishop
-                have about the same value.
-              </p>
-              <p className="text-body">
-                Knights and bishops are called <strong>minor pieces</strong>.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Bishop</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              The Bishop is also worth about 3 pawns. So a knight and a bishop
+              have about the same value.
+            </p>
+            <p className="text-body">
+              Knights and bishops are called <strong>minor pieces</strong>.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -241,45 +226,42 @@ export default function Page() {
     const chess = new Chess("8/8/8/R1ppppp1/8/8/8/8 w - - 0 1");
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Rook</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The rook is a powerful piece and is worth 5 pawns.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Rook</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              The rook is a powerful piece and is worth 5 pawns.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -289,48 +271,45 @@ export default function Page() {
     const chess = new Chess("8/8/8/Q1ppppp1/2pppp2/8/8/8 w - - 0 1");
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The Queen</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The queen is the most powerful piece and is worth 9 pawns!
-              </p>
-              <p className="text-body">
-                Rooks and queens are called <strong>major pieces</strong>.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={next}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The Queen</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              The queen is the most powerful piece and is worth 9 pawns!
+            </p>
+            <p className="text-body">
+              Rooks and queens are called <strong>major pieces</strong>.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
@@ -340,55 +319,57 @@ export default function Page() {
     const chess = new Chess("8/8/8/K1k5/8/8/8/8 w - - 0 1");
 
     return (
-      <div className="flex">
-        <IntroNav highlight3={true} />
-        <div className="container">
-          <div className="text-box">
-            <div className="text-title-div">
-              <h2 className="text-title">The King</h2>
-            </div>
-            <div className="text-body-div">
-              <p className="text-body">
-                The king is your most valuable piece. If you lose your king, you
-                lose the game. The kings never leave the board during the game,
-                so there is no point in measuring their worth in pawns.
-              </p>
-              <p className="text-body">
-                Knowing piece values is extremely important when evaluating a
-                position, so make sure you always have this information in mind.
-              </p>
-            </div>
-            <div className="arrows-div">
-              <FontAwesomeIcon
-                onClick={pre}
-                className="left-arrow"
-                icon={faLeftLong}
-              />
-              <FontAwesomeIcon
-                onClick={direct}
-                className="right-arrow"
-                icon={faRightLong}
-              />
-            </div>
-            <div className="pages-div">
-              <p className="pages-text">
-                {index + 1}/{sections.length}
-              </p>
-            </div>
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">The King</h2>
           </div>
-          <div className="board">
-            <Chessboard
-              position={chess.fen()}
-              boardWidth={325}
-              areArrowsAllowed={false}
-              showBoardNotation={false}
-              arePiecesDraggable={false}
+          <div className="text-body-div">
+            <p className="text-body">
+              The king is your most valuable piece. If you lose your king, you
+              lose the game. The kings never leave the board during the game, so
+              there is no point in measuring their worth in pawns.
+            </p>
+            <p className="text-body">
+              Knowing piece values is extremely important when evaluating a
+              position, so make sure you always have this information in mind.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={direct}
+              className="right-arrow"
+              icon={faRightLong}
             />
           </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={chess.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={false}
+          />
         </div>
       </div>
     );
   }
 
-  return <>{sections[index]}</>;
+  return (
+    <div className="flex">
+      <IntroNav highlight3={true} />
+      {sections[index]}
+    </div>
+  );
 }

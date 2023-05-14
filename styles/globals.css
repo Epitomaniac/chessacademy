@@ -76,7 +76,7 @@ a:active {
 }
 
 .board {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 50px;
   width: 328.5px;
   height: 328.5px;
@@ -84,7 +84,7 @@ a:active {
 }
 
 .text-box {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-right: 25px;
   width: 400px;
   min-width: 400px;
@@ -113,12 +113,10 @@ a:active {
 }
 
 .text-body {
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 5px 10px;
   text-align: justify;
   text-justify: auto;
-  font-family: cursive, sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
   line-height: 23px;
 }
 
@@ -194,7 +192,7 @@ a:active {
 .pages-text {
   user-select: none;
   margin-right: 10px;
-  margin-bottom: 3px;
+  padding-bottom: 3px;
   font-size: 15px;
   font-weight: bold;
 }
@@ -290,7 +288,7 @@ a:active {
   padding-right: 10px;
   text-align: justify;
   text-justify: auto;
-  font-family: cursive, sans-serif;
+  font-family: verdana, sans-serif;
   line-height: 23px;
   font-size: 15px;
 }

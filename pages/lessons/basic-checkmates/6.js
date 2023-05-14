@@ -1172,7 +1172,9 @@ export default function Page() {
             <h2 className="text-title">Summary</h2>
           </div>
           <div className="text-body-div">
-            <p className="text-body">Only check if you think it's necessary.</p>
+            <p className="text-body">
+              Only give check if you think it's necessary.
+            </p>
             <p className="text-body">
               Once the opponent's king reaches one of the edges of the board,
               make sure the king can't escape back toward the center by placing

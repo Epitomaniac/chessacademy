@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export default function CheckmatesNav({
+export default function TacticsNav({
   highlight1,
   highlight2,
   highlight3,
@@ -8,76 +8,60 @@ export default function CheckmatesNav({
   highlight5,
   highlight6,
   highlight7,
-  highlight8,
-  highlight9,
 }) {
   const router = useRouter();
   return (
     <div className="lessons-navbar">
       <ul>
-        <li className="navbar-title">Checkmates</li>
+        <li className="navbar-title">Tactics</li>
         <li
           style={highlight1 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/1")}
+          onClick={() => router.push("/lessons/basic-tactics/1")}
           className="navbar-lesson"
         >
-          Back Rank
+          The Fork
         </li>
         <li
           style={highlight2 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/2")}
+          onClick={() => router.push("/lessons/basic-tactics/2")}
           className="navbar-lesson"
         >
-          Battery
+          The Pin
         </li>
         <li
           style={highlight3 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/3")}
+          onClick={() => router.push("/lessons/basic-tactics/3")}
           className="navbar-lesson"
         >
-          Exercise: Mate in 1
+          The Skewer
         </li>
         <li
           style={highlight4 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/4")}
+          onClick={() => router.push("/lessons/basic-tactics/4")}
           className="navbar-lesson"
         >
-          Queen & Rook vs King
+          Discovered Attack
         </li>
         <li
           style={highlight5 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/5")}
+          onClick={() => router.push("/lessons/basic-tactics/5")}
           className="navbar-lesson"
         >
-          Two Rooks vs King
+          Removing the Defender
         </li>
         <li
           style={highlight6 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/6")}
+          onClick={() => router.push("/lessons/basic-tactics/6")}
           className="navbar-lesson"
         >
-          King & Queen vs King
+          Sacrifice
         </li>
         <li
           style={highlight7 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/7")}
+          onClick={() => router.push("/lessons/basic-tactics/7")}
           className="navbar-lesson"
         >
-          Exercise: Q + R vs K
-        </li>
-        <li
-          style={highlight8 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/8")}
-          className="navbar-lesson"
-        >
-          Exercise: R + R vs K
-        </li>
-        <li
-          style={highlight9 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-checkmates/9")}
-          className="navbar-lesson"
-        >
-          Exercise: K + Q vs K
+          Exercise: Tactics
         </li>
       </ul>
     </div>

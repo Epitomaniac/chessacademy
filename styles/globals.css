@@ -144,6 +144,7 @@ a:active {
 
 .lesson-btn:hover {
   cursor: pointer;
+  background-color: #078907;
 }
 
 .lesson-btn:active {

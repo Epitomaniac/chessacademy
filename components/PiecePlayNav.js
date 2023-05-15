@@ -21,6 +21,13 @@ export default function PiecePlayNav({
         >
           The Pawn
         </li>
+        <li
+          style={highlight2 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/pieceplay/2")}
+          className="navbar-lesson"
+        >
+          The Rook
+        </li>
       </ul>
     </div>
   );

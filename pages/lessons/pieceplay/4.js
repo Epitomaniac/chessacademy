@@ -12,7 +12,8 @@ export default function Page() {
     <One next={next} />,
     <Two next={next} pre={pre} />,
     <Three next={next} pre={pre} />,
-    <Four direct={direct} pre={pre} />,
+    <Four next={next} pre={pre} />,
+    <Five direct={direct} pre={pre} />,
   ];
   const [index, setIndex] = useState(0);
 
@@ -29,14 +30,12 @@ export default function Page() {
   }
 
   function direct() {
-    router.push("/lessons/pieceplay/3");
+    router.push("/lessons/pieceplay/5");
   }
 
   function One({ next }) {
     const [game, setGame] = useState(
-      new Chess(
-        "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2NBPN2/PP1B1PPP/R2Q1RK1 w Qq - 0 1",
-      ),
+      new Chess("n7/8/7n/8/8/2N2N2/8/8 w - - 0 1"),
     );
     const [arrows, setArrows] = useState([]);
     const [draggable, setDraggable] = useState(false);
@@ -45,21 +44,17 @@ export default function Page() {
       <div className="container">
         <div className="text-box">
           <div className="text-title-div">
-            <h2 className="text-title">The Rook</h2>
+            <h2 className="text-title">The Knight</h2>
           </div>
           <div className="text-body-div">
             <p className="text-body">
-              Since rooks can't move diagonally and can't jump over other
-              pieces, they can't do very well in positions where there are many
-              pawns on the board.
+              Since knights are short-range pieces, they like to stay near the
+              center from where they could access all parts of the board in just
+              a few moves.
             </p>
             <p className="text-body">
-              The board shows a position where rooks can't move very well.
-            </p>
-            <p style={{ paddingTop: "0px" }} className="text-body">
-              The rook often doesn't enter the game until the board gets clear
-              of most of the pieces, which usually happens towards the end of
-              the game.
+              Knights on the corners are miserable, while putting a knight on
+              the edge is often not a good idea.
             </p>
           </div>
           <div className="arrows-div">
@@ -85,7 +80,12 @@ export default function Page() {
             arePiecesDraggable={draggable}
             customArrowColor={"rgba(255,0,0, 0.5)"}
             customArrows={arrows}
-            customSquareStyles={{}}
+            customSquareStyles={{
+              f3: { border: "2px solid green", borderRadius: "50%" },
+              c3: { border: "2px solid green", borderRadius: "50%" },
+              a8: { border: "2px solid red", borderRadius: "50%" },
+              h6: { border: "2px solid red", borderRadius: "50%" },
+            }}
             boardOrientation={"white"}
           />
         </div>
@@ -95,11 +95,11 @@ export default function Page() {
 
   function Two({ next, pre }) {
     const [game, setGame] = useState(
-      new Chess("r5k1/1bpq1pp1/1p1p1n1p/8/8/1QPP1N2/1P1N1PPP/4R1K1 w - - 0 1"),
+      new Chess("8/8/4b3/8/8/4N3/8/8 w - - 0 1"),
     );
     const [arrows, setArrows] = useState([
-      ["e1", "e8"],
-      ["a8", "a1"],
+      ["e6", "g4"],
+      ["e6", "c4"],
     ]);
     const [draggable, setDraggable] = useState(false);
 
@@ -107,19 +107,17 @@ export default function Page() {
       <div className="container">
         <div className="text-box">
           <div className="text-title-div">
-            <h2 className="text-title">Open File</h2>
+            <h2 className="text-title">Knights Getting Dominated</h2>
           </div>
           <div className="text-body-div">
             <p className="text-body">
-              An <strong>open file</strong> is a file with no pawns on it.
+              If a knight and a bishop are placed within two squares from each
+              other in a straight line, the bishop dominates the knight and does
+              not let it move forward.
             </p>
             <p className="text-body">
-              It is a good strategy to put your rooks on open files, since they
-              can control all the squares in it, either directly or indirectly.
-            </p>
-            <p className="text-body">
-              The board shows a position where rooks are already very well
-              placed.
+              Here the black bishop is controlling all of the squares the knight
+              can move forward to.
             </p>
           </div>
           <div className="arrows-div">
@@ -159,32 +157,26 @@ export default function Page() {
 
   function Three({ next, pre }) {
     const [game, setGame] = useState(
-      new Chess("2r5/1p1p1pp1/p3p2p/8/4P3/1P6/P1P2PPP/3R4 w - - 0 1"),
+      new Chess("8/2n3k1/p2p2n1/P1pPp1p1/1p2PpP1/1P3P2/2BB4/6K1 w - - 0 1"),
     );
-    const [arrows, setArrows] = useState([
-      ["d1", "d7"],
-      ["c8", "c2"],
-    ]);
+    const [arrows, setArrows] = useState([]);
     const [draggable, setDraggable] = useState(false);
 
     return (
       <div className="container">
         <div className="text-box">
           <div className="text-title-div">
-            <h2 className="text-title">Half-open File</h2>
+            <h2 className="text-title">Knights in Closed Positions</h2>
           </div>
           <div className="text-body-div">
             <p className="text-body">
-              A <strong>half-open file</strong> or semi-open file is a file
-              where there are only pawns of one color.
+              Since knights can jump over other pieces, they are highly valuable
+              in closed positions. In such situations, knights can access
+              squares that other pieces cannot reach.
             </p>
             <p className="text-body">
-              The pawns on a half-open file can be attacked by the side that has
-              no pawns on it, usually with a rook.
-            </p>
-            <p className="text-body">
-              The board shows a position where rooks are attacking the half-open
-              files.
+              In this position black is better because of the knight's
+              superiority in closed positions.
             </p>
           </div>
           <div className="arrows-div">
@@ -222,41 +214,134 @@ export default function Page() {
     );
   }
 
-  function Four({ direct, pre }) {
-    const [game, setGame] = useState(
-      new Chess("4r3/p4p1p/1pk3p1/8/3R4/1KP5/1P3PPP/8 b - - 0 1"),
-    );
+  function Four({ next, pre }) {
+    const [game, setGame] = useState(new Chess());
     const [arrows, setArrows] = useState([]);
     const [draggable, setDraggable] = useState(false);
 
     function play() {
-      game.move("Re2");
+      game.move("e4");
       setGame({ ...game });
       setTimeout(() => {
-        setArrows([
-          ["e2", "b2"],
-          ["e2", "h2"],
-        ]);
-      }, 300);
+        game.move("Nf6");
+        setGame({ ...game });
+      }, 500);
+      setTimeout(() => {
+        game.move("e5");
+        setGame({ ...game });
+      }, 1000);
+      setTimeout(() => {
+        game.move("Ne4");
+        setGame({ ...game });
+      }, 1500);
+      setTimeout(() => {
+        game.move("d3");
+        setGame({ ...game });
+      }, 2000);
+      setTimeout(() => {
+        game.move("Nc5");
+        setGame({ ...game });
+      }, 2500);
+      setTimeout(() => {
+        game.move("d4");
+        setGame({ ...game });
+      }, 3000);
+      setTimeout(() => {
+        game.move("Ne6");
+        setGame({ ...game });
+      }, 3500);
+      setTimeout(() => {
+        game.move("d5");
+        setGame({ ...game });
+      }, 4000);
+      setTimeout(() => {
+        game.move("Nc5");
+        setGame({ ...game });
+      }, 4500);
+      setTimeout(() => {
+        game.move("b4");
+        setGame({ ...game });
+      }, 5000);
     }
 
     return (
       <div className="container">
         <div className="text-box">
           <div className="text-title-div">
-            <h2 className="text-title">Rooks on 7th</h2>
+            <h2 className="text-title">Knights and Pawns</h2>
           </div>
           <div className="text-body-div">
             <p className="text-body">
-              A rook on seventh or second ranks (depends if you are white or
-              black) is very damaging, as it can feast on the pawns that are
-              often found there.
+              Unlike queens and bishops, knights (and rooks) can be kicked by
+              pawns since they can't simultaneously attack a pawn that has
+              attacked them.
             </p>
             <button onClick={play} className="lesson-btn">
               Play
             </button>
             <p className="text-body">
-              Black is better for having an active rook on the second rank.
+              Place your knight on squares that are safe from pawn attacks.
+            </p>
+          </div>
+          <div className="arrows-div">
+            <FontAwesomeIcon
+              onClick={pre}
+              className="left-arrow"
+              icon={faLeftLong}
+            />
+            <FontAwesomeIcon
+              onClick={next}
+              className="right-arrow"
+              icon={faRightLong}
+            />
+          </div>
+          <div className="pages-div">
+            <p className="pages-text">
+              {index + 1}/{sections.length}
+            </p>
+          </div>
+        </div>
+        <div className="board">
+          <Chessboard
+            position={game.fen()}
+            boardWidth={325}
+            areArrowsAllowed={false}
+            showBoardNotation={false}
+            arePiecesDraggable={draggable}
+            customArrowColor={"rgba(255,0,0, 0.5)"}
+            customArrows={arrows}
+            customSquareStyles={{}}
+            boardOrientation={"white"}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  function Five({ direct, pre }) {
+    const [game, setGame] = useState(
+      new Chess("8/2b2k1p/p4pp1/1p6/5P2/P4KPP/1P3N2/8 w - - 0 1"),
+    );
+    const [arrows, setArrows] = useState([]);
+    const [draggable, setDraggable] = useState(false);
+
+    return (
+      <div className="container">
+        <div className="text-box">
+          <div className="text-title-div">
+            <h2 className="text-title">Knights in Endgames</h2>
+          </div>
+          <div className="text-body-div">
+            <p className="text-body">
+              In endgame positions where both sides have a king and a minor
+              piece and a few pawns, the side that has a knight would prefer to
+              have all of its pawns on one side of the board as knights are
+              short-range pieces and are not capable of covering the whole
+              board.
+            </p>
+            <p className="text-body">
+              Here black will have an easier play because white's knight can't
+              support the pawns on both sides of the board.
             </p>
           </div>
           <div className="arrows-div">
@@ -296,7 +381,7 @@ export default function Page() {
 
   return (
     <div className="flex">
-      <PiecePlayNav highlight2={true} />
+      <PiecePlayNav highlight4={true} />
       {sections[index]}
     </div>
   );

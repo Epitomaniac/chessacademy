@@ -5,7 +5,7 @@ export default function Lessons() {
   return (
     <div>
       <h2 style={{ marginLeft: "15px", marginTop: "15px" }}>
-        <Link href="/lessons/intro/1">Intro</Link>
+        <Link href="/lessons/intro/board/1">Intro</Link>
       </h2>
       <h2 style={{ marginLeft: "15px", marginTop: "15px" }}>
         <Link href="/lessons/basic-checkmates/1">Basic Checkmates</Link>

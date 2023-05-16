@@ -897,11 +897,14 @@ export default function Page() {
 
     function play() {
       game.load("8/5p2/8/4P3/8/8/8/8 b - - 0 1");
-      game.move("f5");
       setGame({ ...game });
       setTimeout(() => {
-        setArrows([["f7", "f5"]]);
-      }, 300);
+        game.move("f5");
+        setGame({ ...game });
+        setTimeout(() => {
+          setArrows([["f7", "f5"]]);
+        }, 300);
+      }, 500);
       setTimeout(() => {
         game.move("exf6");
         setGame({ ...game });

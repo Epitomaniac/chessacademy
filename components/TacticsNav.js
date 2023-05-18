@@ -62,7 +62,9 @@ export default function TacticsNav({
         </li>
         <li
           style={highlight7 && { backgroundColor: "#201f1f", color: "white" }}
-          onClick={() => router.push("/lessons/basic-tactics/exercise/1")}
+          onClick={() =>
+            router.push("/lessons/basic-tactics/tactics-exercise/1")
+          }
           className="navbar-lesson"
         >
           Exercise: Tactics

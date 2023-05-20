@@ -5,6 +5,8 @@ export default function PiecePlayNav({
   highlight2,
   highlight3,
   highlight4,
+  highlight5,
+  highlight6,
 }) {
   const router = useRouter();
   return (
@@ -38,6 +40,20 @@ export default function PiecePlayNav({
           className="navbar-lesson"
         >
           The Knight
+        </li>
+        <li
+          style={highlight5 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/piece-play/queen/1")}
+          className="navbar-lesson"
+        >
+          The Queen
+        </li>
+        <li
+          style={highlight6 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/piece-play/king/1")}
+          className="navbar-lesson"
+        >
+          The King
         </li>
       </ul>
     </div>

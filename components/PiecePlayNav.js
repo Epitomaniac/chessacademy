@@ -7,6 +7,7 @@ export default function PiecePlayNav({
   highlight4,
   highlight5,
   highlight6,
+  highlight7,
 }) {
   const router = useRouter();
   return (
@@ -54,6 +55,13 @@ export default function PiecePlayNav({
           className="navbar-lesson"
         >
           The King
+        </li>
+        <li
+          style={highlight7 && { backgroundColor: "#201f1f", color: "white" }}
+          onClick={() => router.push("/lessons/piece-play/piece-play-quiz/1")}
+          className="navbar-lesson"
+        >
+          Quiz: Piece Play
         </li>
       </ul>
     </div>

@@ -20,6 +20,24 @@ body {
   display: flex;
 }
 
+/* promotion menu */
+
+.menu {
+  position: absolute;
+  left: 162px;
+  z-index: 10;
+}
+
+.menu-img {
+  display: block;
+  background-color: #201f1f;
+}
+
+.menu-img:hover {
+  cursor: pointer;
+  background-color: orangered;
+}
+
 /* lessons navbar */
 
 .lessons-navbar {
@@ -76,6 +94,7 @@ a:active {
 }
 
 .board {
+  position: relative;
   margin-top: 40px;
   margin-bottom: 50px;
   width: 328.5px;
